@@ -16,10 +16,14 @@ int target = int.Parse(Console.ReadLine());
 if (FindIndex(scores, target) == -1)
 {
     System.Console.WriteLine("Результат не найден");
-} else
-{
-    System.Console.Write($"Первый индекс: {FindIndex(scores, target)}");
 }
+else
+{
+    System.Console.WriteLine($"Первый индекс: {FindIndex(scores, target)}");
+}
+
+int[] values = { 1, 2 };
+Console.WriteLine(CalculateAverage(values));
 
 int SumArray(int[] numbers)
 {
@@ -88,4 +92,10 @@ int FindIndex(int[] numbers, int target)
     }
 
     return index;
+}
+double CalculateAverage(int[] numbers)
+{
+    double sum = SumArray(numbers);
+    double average = sum / numbers.Length;
+    return average;
 }
